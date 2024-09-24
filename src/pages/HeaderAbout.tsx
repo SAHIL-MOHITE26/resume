@@ -25,7 +25,7 @@ const HeaderAbout: React.FC = () => {
   const certifications = [
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/800px-HackerRank_Icon-1000px.png",
-      name: "HackerRank CSS Basic",
+      name: "HackerRank CSS",
       description: "A certification demonstrating proficiency in CSS fundamentals.",
       url: "https://www.hackerrank.com/certificates/iframe/b95f1c6c4084" // Replace with actual URL
     },
@@ -76,7 +76,7 @@ const HeaderAbout: React.FC = () => {
         {/* Photo Section */}
         <div className="md:w-1/3 flex justify-center items-center">
           <img
-            src="src/assets/images/cutout.jpg"
+            src="src/assets/images/my photo.jpg"
             alt="Sahil Mohite"
             className="w-100 h-80 object-cover"
           />

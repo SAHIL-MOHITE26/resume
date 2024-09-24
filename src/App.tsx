@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Carousel from './components/Carousel';
 import AboutMe from './components/AboutMe';
@@ -18,9 +18,11 @@ const App: React.FC = () => {
 
         {/* Define Routes for different sections */}
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<><Carousel /><AboutMe /><Skills /><Portfolio /></>} />
           <Route path="/about" element={<HeaderAbout />} />
           <Route path="/contact" element={<HeaderContactMe />} />
+          <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
         </Routes>
 
         <Footer />

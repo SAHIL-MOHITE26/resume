@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
           </p>
           {/* Grey button with no rounding */}
           <a
-            href="/assets/images/Sahil Resume.pdf" // Replace with the actual path to your PDF
+            href="https://drive.google.com/file/d/1_-YM4rS5tAv_OZ2afAk77MKXZtPcqH11/view?usp=sharing" // Replace with the actual path to your PDF
             target="_blank" // Opens in a new tab
             rel="noopener noreferrer" // Security feature
             className="mt-4 mb-10 inline-block px-6 py-3 bg-gray-500 text-white font-semibold border border-transparent hover:bg-gray-600 text-center transition-all duration-200"

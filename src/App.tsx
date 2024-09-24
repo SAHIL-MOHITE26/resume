@@ -25,6 +25,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
           </Routes>
 

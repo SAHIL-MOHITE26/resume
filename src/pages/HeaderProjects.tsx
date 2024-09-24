@@ -38,6 +38,13 @@ const projects: Project[] = [
     status: 'ongoing',
     imageUrl: 'https://via.placeholder.com/150', // Replace with your image URL
   },
+  {
+    id: 5,
+    title: 'Gadgets.in',
+    description: 'FIGMA file.',
+    status: 'completed',
+    imageUrl: 'https://via.placeholder.com/150', // Replace with your image URL
+  },
 ];
 
 const Projects: React.FC = () => {

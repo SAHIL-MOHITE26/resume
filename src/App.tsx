@@ -9,26 +9,30 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 import HeaderAbout from './pages/HeaderAbout';
 import HeaderContactMe from './components/HeaderContactMe';
+import Projects from './pages/HeaderProjects';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="App">
-        <Header />
+   
+      <Router>
+        <div className="App">
+          <Header />
 
-        {/* Define Routes for different sections */}
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<><Carousel /><AboutMe /><Skills /><Portfolio /></>} />
-          <Route path="/about" element={<HeaderAbout />} />
-          <Route path="/contact" element={<HeaderContactMe />} />
-          <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
-        </Routes>
+          {/* Define Routes for different sections */}
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<><Carousel /><AboutMe /><Skills /><Portfolio /></>} />
+            <Route path="/about" element={<HeaderAbout />} />
+            <Route path="/contact" element={<HeaderContactMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
+          </Routes>
 
-        <Footer />
-        <ScrollToTop /> 
-      </div>
-    </Router>
+          <Footer />
+          <ScrollToTop /> 
+        </div>
+      </Router>
+    
   );
 };
 

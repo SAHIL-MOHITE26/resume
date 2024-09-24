@@ -33,7 +33,7 @@ const HeaderAbout: React.FC = () => {
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-7xl mx-auto mb-8 relative z-10">
         {/* Description Section */}
         <div className="md:w-2/3 p-6 flex flex-col justify-center">
-          <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">About.</h2>
+          <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">about.</h2>
           <p className="text-lg text-gray-600 mb-4">
             Hi, I'm Sahil Mohite, a passionate front-end developer with a knack for creating responsive and interactive
             websites. I enjoy working with React, TypeScript, and staying up-to-date with the latest trends in web

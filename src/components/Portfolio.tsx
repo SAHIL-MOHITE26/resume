@@ -19,7 +19,9 @@ const Carousel = () => {
   return (
     <>
       <div>
-        <h1 className='text-5xl font-serif font-bold text-center mt-10 mb-10'>Portfolio</h1>
+        
+        <h1 className='text-5xl font-serif font-bold text-center mt-10 mb-5'>Portfolio</h1>
+        <button className='bg-black text-white px-4 py-2 mb-2 ml-[710px] '>See more</button>
       </div>
       <div className="flex justify-center mb-12">
         <div className="relative w-full max-w-7xl mx-auto h-[500px] md:h-[600px] lg:h-[700px]">
@@ -37,7 +39,9 @@ const Carousel = () => {
                   className="w-full h-full object-cover rounded-lg" // Added rounded-lg here
                 />
               </div>
+              
             ))}
+            
           </div>
         </div>
       </div>

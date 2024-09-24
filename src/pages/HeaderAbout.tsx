@@ -54,7 +54,7 @@ const HeaderAbout: React.FC = () => {
         {/* Photo Section */}
         <div className="md:w-1/3 flex justify-center items-center">
           <img
-            src="src/assets/images/cutout.png"
+            src="src/assets/images/cutout.jpg"
             alt="Sahil Mohite"
             className="w-100 h-80 object-cover"
           />

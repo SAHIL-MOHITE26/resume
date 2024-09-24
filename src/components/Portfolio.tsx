@@ -22,7 +22,7 @@ const Carousel = () => {
         <h1 className='text-5xl font-serif font-bold text-center mt-10 mb-10'>Portfolio</h1>
       </div>
       <div className="flex justify-center mb-12">
-        <div className="relative w-full max-w-7xl mx-auto h-[500px]">
+        <div className="relative w-full max-w-7xl mx-auto h-[500px] md:h-[600px] lg:h-[700px]">
           <div className="overflow-hidden rounded-lg">
             {images.map((image, index) => (
               <div

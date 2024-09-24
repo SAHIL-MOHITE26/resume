@@ -1,29 +1,28 @@
 import React from 'react';
 import { FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 
-
 const Header: React.FC = () => {
   return (
-    <header className="bg-white text-white p-8">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-black font-serif">SM</h1>
+    <header className="bg-white text-white p-4 sm:p-8">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+        <h1 className="text-2xl sm:text-3xl font-bold text-black font-serif">SM</h1>
         <nav className="flex-grow">
-          <ul className="flex justify-center space-x-4 items-center  gap-10 font-serif  text-black">
+          <ul className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 items-center gap-4 font-serif text-black">
             <li>
-              <a href="/home" className="hover:underline ">Home</a>
+              <a href="/home" className="hover:underline">Home</a>
             </li>
             <li>
-              <a href="/about" className="hover:underline ">About</a>
+              <a href="/about" className="hover:underline">About</a>
             </li>
             <li>
-              <a href="#" className="hover:underline ">Projects</a>
+              <a href="#" className="hover:underline">Projects</a>
             </li>
             <li>
               <a href="/contact" className="hover:underline">Contact</a>
             </li>
           </ul>
         </nav>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mt-2 sm:mt-0">
           <a href="https://www.linkedin.com/in/sahil-mohite-a39957235/" className="text-black hover:text-blue-600">
             <FaLinkedin size={24} />
           </a>

@@ -33,7 +33,7 @@ const HeaderAbout: React.FC = () => {
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-7xl mx-auto mb-8 relative z-10">
         {/* Description Section */}
         <div className="md:w-2/3 p-6 flex flex-col justify-center">
-          <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">about.</h2>
+          <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">About.</h2>
           <p className="text-lg text-gray-600 mb-4">
             Hi, I'm Sahil Mohite, a passionate front-end developer with a knack for creating responsive and interactive
             websites. I enjoy working with React, TypeScript, and staying up-to-date with the latest trends in web
@@ -56,24 +56,22 @@ const HeaderAbout: React.FC = () => {
           <img
             src="src/assets/images/cutout.jpg"
             alt="Sahil Mohite"
-            className="w-100 h-80 object-cover"
+            className="w-100 h-80 object-cover  "
           />
         </div>
       </div>
 
-      
-
       {/* 6 Small Cards Below */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 max-w-7xl mx-auto z-10 relative">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-7xl mx-auto z-10 relative">
         {cardImages.map((image, index) => (
-          <div key={index} className="relative">
+          <div key={index} className="relative group">
             <img
               src={image}
               alt={`Card ${index + 1}`}
-              className="w-full h-40 object-cover mb-2 rounded transition-transform transform hover:scale-105"
+              className="w-full h-40 object-cover mb-2 rounded transition-transform transform group-hover:scale-105"
             />
             {/* Hover Text */}
-            <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold opacity-0 transition-opacity duration-300 bg-black bg-opacity-50 hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold opacity-0 transition-opacity duration-300 bg-black bg-opacity-50 group-hover:opacity-100">
               {hoverTexts[index]}
             </div>
           </div>

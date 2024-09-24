@@ -58,25 +58,24 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-110 p-8 bg-gray-800">
-      <h1 className="text-5xl font-bold mb-6 text-white font-serif text-center mb-15">Skills</h1>
-      <h2 className='text-center mb-10 mt-10 text-white'>
-  As a front-end web developer, I create visually appealing and user-friendly interfaces. Proficient in HTML, CSS, and JavaScript, I use React.js to build dynamic, responsive web applications. My UI/UX design expertise enables me to craft intuitive layouts for seamless interaction across devices. Familiar with Git for version control, I ensure efficient collaboration and code management, aiming to blend aesthetics with functionality for high-quality web solutions.
-</h2>
-
+    <div className="w-full p-8 bg-gray-800">
+      <h1 className="text-5xl font-bold mb-6 text-white font-serif text-center">Skills</h1>
+      <h2 className='text-center mb-10 text-white'>
+        As a front-end web developer, I create visually appealing and user-friendly interfaces. Proficient in HTML, CSS, and JavaScript, I use React.js to build dynamic, responsive web applications. My UI/UX design expertise enables me to craft intuitive layouts for seamless interaction across devices. Familiar with Git for version control, I ensure efficient collaboration and code management, aiming to blend aesthetics with functionality for high-quality web solutions.
+      </h2>
 
       <div className="flex flex-col md:flex-row md:space-x-8 h-full">
         {/* Skills List Section */}
         <section className="flex-1 text-white mb-8 md:mb-0">
-          <h2 className="text-2xl font-semibold mb-4 text-center mt-20 ml-2">Technical Skills</h2>
-          <hr className="w-30 ml-40 mr-40" />
-          <div className="flex justify-center space-x-8 mt-8">
+          <h2 className="text-2xl font-semibold mb-4 text-center">Technical Skills</h2>
+          <hr className="border-t border-white w-2/3 mx-auto mb-4" />
+          <div className="flex justify-center space-x-6 mt-8 flex-wrap">
             {/* Icon List */}
-            <FaReact size={50} />
-            <FaJs size={50} />
-            <FaHtml5 size={50} />
-            <FaCss3Alt size={50} />
-            <FaGitAlt size={50} />
+            <FaReact size={50} title="React" />
+            <FaJs size={50} title="JavaScript" />
+            <FaHtml5 size={50} title="HTML5" />
+            <FaCss3Alt size={50} title="CSS3" />
+            <FaGitAlt size={50} title="Git" />
           </div>
         </section>
 

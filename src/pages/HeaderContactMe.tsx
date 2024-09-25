@@ -10,23 +10,25 @@ const ContactMe: React.FC = () => {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submitted'); // Check if this is printed
 
     if (form.current) {
+      console.log('Sending email...'); // Check if this is printed
       emailjs.sendForm(
-        'service_slc22cr',  // Replace with your actual service ID from EmailJS
-        'template_95mkbsj', // Replace with your actual template ID from EmailJS
+        'service_slc22cr',  // Replace with your actual service ID
+        'template_3wmkua6', // Replace with your actual template ID
         form.current,
-        '84C3XoEudcHQ7BC64lRI9'   // Replace with your actual public key from EmailJS
+        '84C3XoEudcHQ7BC64lRI9"'   // Replace with your actual public key
       )
       .then((result) => {
-        console.log('Email successfully sent:', result.text);
+        console.log('Email successfully sent:', result.text); // Check if this is printed
         setIsSubmitted(true);
         setTimeout(() => {
           navigate("/");  // Redirect to home page after submission
         }, 2000);
       })
       .catch((error) => {
-        console.error('Email failed to send:', error.text);
+        console.error('Email failed to send:', error.text); // Check if this is printed
       });
     }
   };
@@ -46,7 +48,7 @@ const ContactMe: React.FC = () => {
                 <label htmlFor="name" className="block text-gray-700">Name</label>
                 <input
                   type="text"
-                  name="from_name"         // Must match the variable name in your EmailJS template
+                  name="from_name"
                   placeholder="Your Name"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                   required
@@ -57,7 +59,7 @@ const ContactMe: React.FC = () => {
                 <label htmlFor="email" className="block text-gray-700">Email</label>
                 <input
                   type="email"
-                  name="from_email"        // Must match the variable name in your EmailJS template
+                  name="from_email"
                   placeholder="Your Email"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                   required
@@ -67,7 +69,7 @@ const ContactMe: React.FC = () => {
               <div className="mb-4">
                 <label htmlFor="message" className="block text-gray-700">Message</label>
                 <textarea
-                  name="message"           // Must match the variable name in your EmailJS template
+                  name="message"
                   rows={4}
                   placeholder="Your Message"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"

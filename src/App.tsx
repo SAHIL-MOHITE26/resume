@@ -8,7 +8,7 @@ import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 import HeaderAbout from './pages/HeaderAbout';
-import HeaderContactMe from './components/HeaderContactMe';
+import HeaderContactMe from './pages/HeaderContactMe';
 import Projects from './pages/HeaderProjects';
 
 const App: React.FC = () => {

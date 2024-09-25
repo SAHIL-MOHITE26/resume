@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import emailjs from "emailjs-com";
 
 const ContactMe: React.FC = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    emailjs
+      .send(
+        "service_slc22cr",    // Replace with your EmailJS service ID
+        "template_95mkbsj",   // Replace with your EmailJS template ID
+        formData,
+        "84C3XoEudcHQ7BC64lRI9"        // Replace with your EmailJS user ID
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setSuccess(true); // Display success message
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-4xl w-full flex flex-col md:flex-row">
@@ -13,7 +42,7 @@ const ContactMe: React.FC = () => {
             I'd love to hear from you! Please fill out the form below to get in touch.
           </p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700">
                 Name
@@ -23,6 +52,8 @@ const ContactMe: React.FC = () => {
                 id="name"
                 placeholder="Your Name"
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -36,6 +67,8 @@ const ContactMe: React.FC = () => {
                 id="email"
                 placeholder="Your Email"
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -49,6 +82,8 @@ const ContactMe: React.FC = () => {
                 rows={4}
                 placeholder="Your Message"
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                value={formData.message}
+                onChange={handleChange}
                 required
               ></textarea>
             </div>
@@ -60,6 +95,8 @@ const ContactMe: React.FC = () => {
               Send Message
             </button>
           </form>
+
+          {success && <p className="mt-4 text-green-500 text-center">Message sent successfully!</p>}
         </div>
 
         {/* Vertical Line */}

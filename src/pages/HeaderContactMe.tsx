@@ -14,7 +14,7 @@ const ContactMe: React.FC = () => {
         'service_kblcleh',      // Replace with your actual service ID
         'template_3tkavzg',     // Replace with your actual template ID
         form.current,
-        '84C3XoEudcHQ7BC64lRI9'       // Replace with your actual public key (previously User ID)
+        'AWbwVlk6ek5gPlbrY'
       )
       .then((result) => {
         console.log('Email successfully sent:', result.text);

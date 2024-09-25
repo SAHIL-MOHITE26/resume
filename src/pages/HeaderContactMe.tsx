@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";  // Import the EmailJS package
+import emailjs from "emailjs-com";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const ContactMe: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null); // UseRef to reference the form
+  const form = useRef<HTMLFormElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
 
@@ -12,23 +12,21 @@ const ContactMe: React.FC = () => {
     e.preventDefault();
 
     if (form.current) {
-      // Call emailjs.sendForm method to send the email
       emailjs.sendForm(
-        'service_slc22cr',   // Replace with your EmailJS service ID
-        'template_95mkbsj',  // Replace with your EmailJS template ID
+        'service_slc22cr',  // Replace with your actual service ID from EmailJS
+        'template_95mkbsj', // Replace with your actual template ID from EmailJS
         form.current,
-        '84C3XoEudcHQ7BC64lRI9'    // Replace with your EmailJS public key
+        '84C3XoEudcHQ7BC64lRI9'   // Replace with your actual public key from EmailJS
       )
       .then((result) => {
-        console.log(result.text); // Log success
-        setIsSubmitted(true);     // Update submission state
-
-        // Redirect to home after 2 seconds
+        console.log('Email successfully sent:', result.text);
+        setIsSubmitted(true);
         setTimeout(() => {
-          navigate("/");
+          navigate("/");  // Redirect to home page after submission
         }, 2000);
-      }, (error) => {
-        console.log(error.text);  // Log error if submission fails
+      })
+      .catch((error) => {
+        console.error('Email failed to send:', error.text);
       });
     }
   };
@@ -48,7 +46,7 @@ const ContactMe: React.FC = () => {
                 <label htmlFor="name" className="block text-gray-700">Name</label>
                 <input
                   type="text"
-                  name="name"         // Use the correct name attribute for EmailJS
+                  name="from_name"         // Must match the variable name in your EmailJS template
                   placeholder="Your Name"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                   required
@@ -59,7 +57,7 @@ const ContactMe: React.FC = () => {
                 <label htmlFor="email" className="block text-gray-700">Email</label>
                 <input
                   type="email"
-                  name="email"        // Use the correct name attribute for EmailJS
+                  name="from_email"        // Must match the variable name in your EmailJS template
                   placeholder="Your Email"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                   required
@@ -69,7 +67,7 @@ const ContactMe: React.FC = () => {
               <div className="mb-4">
                 <label htmlFor="message" className="block text-gray-700">Message</label>
                 <textarea
-                  name="message"      // Use the correct name attribute for EmailJS
+                  name="message"           // Must match the variable name in your EmailJS template
                   rows={4}
                   placeholder="Your Message"
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
@@ -92,10 +90,8 @@ const ContactMe: React.FC = () => {
           )}
         </div>
 
-        {/* Vertical Line */}
         <div className="hidden md:block border-l border-gray-300 mx-4 md:mx-7" style={{ height: 'auto' }} />
 
-        {/* Social Media Icons Section */}
         <div className="flex-1 rounded-lg p-6 flex flex-col items-center">
           <h2 className="text-xl font-bold text-gray-800 mb-4 mt-10 md:mt-40">Connect with Me</h2>
           <div className="flex space-x-4">

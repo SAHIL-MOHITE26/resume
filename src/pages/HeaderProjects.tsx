@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaCheckCircle, FaClock } from 'react-icons/fa';
 
 interface Project {
@@ -6,7 +6,7 @@ interface Project {
   title: string;
   description: string;
   status: 'completed' | 'ongoing';
-  imageUrl: string;
+  imageUrl: string; // URL for the image
   externalLink: string; // External URL
 }
 
@@ -16,7 +16,7 @@ const projects: Project[] = [
     title: 'Personal Portfolio',
     description: 'A personal website to showcase my work and skills.',
     status: 'completed',
-    imageUrl: 'https://productiveshop.com/wp-content/uploads/2022/10/image30-1536x760.png.webp',
+    imageUrl: 'src/assets/images/portfolio.jpg', // Local image path
     externalLink: 'https://sahilmohite.netlify.app/home', // External URL
   },
   {
@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: 'JetSetWheels',
     description: 'An online store for selling products.',
     status: 'ongoing',
-    imageUrl: 'https://websitesetup.org/wp-content/uploads/2020/12/OnePageLove.com-december-2020.jpg',
+    imageUrl: '/images/jetsetwheels.jpg', // Local image path
     externalLink: 'https://jetsetwheels.com', // External URL
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: 'JunkYard',
     description: 'A platform for writing and sharing blog posts.',
     status: 'completed',
-    imageUrl: 'https://colorlib.com/wp/wp-content/uploads/sites/2/cool-website-template-ideas.jpg',
+    imageUrl: 'src/assets/images/junkyard.jpg', // Local image path
     externalLink: 'https://junkyard.com', // External URL
   },
   {
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: 'SEI Admin Panel',
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: 'src/assets/images/sei-admin.jpg', // Local image path
     externalLink: 'https://seiadmin.com', // External URL
   },
   {
@@ -48,17 +48,55 @@ const projects: Project[] = [
     title: 'Gadgets.in',
     description: 'FIGMA file.',
     status: 'completed',
-    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM',
+    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
 ];
 
 const Projects: React.FC = () => {
+  const [filter, setFilter] = useState<'all' | 'completed' | 'ongoing'>('all');
+
+  // Filter projects based on selected filter
+  const filteredProjects = projects.filter((project) => {
+    if (filter === 'completed') return project.status === 'completed';
+    if (filter === 'ongoing') return project.status === 'ongoing';
+    return true; // Show all projects
+  });
+
   return (
     <div className="max-w-7xl mx-auto p-6">
       <h1 className="text-4xl font-bold text-center mb-8">Projects</h1>
+      
+      {/* Filter Buttons */}
+      <div className="mb-6 text-center">
+        <button
+          onClick={() => setFilter('all')}
+          className={`mx-2 px-4 py-1 rounded-lg ${
+            filter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setFilter('completed')}
+          className={`mx-2 px-4 py-1 rounded-lg ${
+            filter === 'completed' ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
+        >
+          Completed
+        </button>
+        <button
+          onClick={() => setFilter('ongoing')}
+          className={`mx-2 px-4 py-1 rounded-lg ${
+            filter === 'ongoing' ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
+        >
+          Ongoing
+        </button>
+      </div>
+
       <div className="flex flex-col space-y-8">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <a 
             key={project.id} 
             href={project.externalLink} // External link

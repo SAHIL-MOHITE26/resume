@@ -7,7 +7,7 @@ const HeaderAbout: React.FC = () => {
     "https://www.adorama.com/alc/wp-content/uploads/2021/11/Types-of-Shots-for-Filmmakers-e1641493485327-1024x590.jpg",
     "https://www.thestatesman.com/wp-content/uploads/2023/01/iStock-1019326950.jpg",
     "https://picsum.photos/200/300?random=4",
-    "https://picsum.photos/200/300?random=5",
+    "https://afar.brightspotcdn.com/dims4/default/d5567ae/2147483647/strip/true/crop/3024x2016+504+0/resize/900x600!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F2d%2F61%2F5c02357f462b9bc155732b96e111%2Fsanta-monica-michelle-heimerman-lede.jpg",
     "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?cs=srgb&dl=pexels-pixabay-46798.jpg&fm=jpg",
   ];
 

@@ -16,7 +16,7 @@ const projects: Project[] = [
     title: 'Personal Portfolio',
     description: 'A personal website to showcase my work and skills.',
     status: 'completed',
-    imageUrl: 'src/assets/images/portfolio.jpg', // Local image path
+    imageUrl: './src/assets/images/portfolio.jpg', // Local image path
     externalLink: 'https://sahilmohite.netlify.app/home', // External URL
   },
   {
@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: 'JetSetWheels',
     description: 'An online store for selling products.',
     status: 'ongoing',
-    imageUrl: '/images/jetsetwheels.jpg', // Local image path
+    imageUrl: './src/images/jetsetwheels.jpg', // Local image path
     externalLink: 'https://jetsetwheels.com', // External URL
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: 'JunkYard',
     description: 'A platform for writing and sharing blog posts.',
     status: 'completed',
-    imageUrl: 'src/assets/images/junkyard.jpg', // Local image path
+    imageUrl: './src/assets/images/junkyard.jpg', // Local image path
     externalLink: 'https://junkyard.com', // External URL
   },
   {
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: 'SEI Admin Panel',
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
-    imageUrl: 'src/assets/images/sei-admin.jpg', // Local image path
+    imageUrl: './src/assets/images/sei-admin.jpg', // Local image path
     externalLink: 'https://seiadmin.com', // External URL
   },
   {

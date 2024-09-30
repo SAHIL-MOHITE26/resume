@@ -45,11 +45,6 @@ const HeaderAbout: React.FC = () => {
 
   return (
     <div className="container mx-auto my-10 relative">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('your-background-image-url-here.jpg')" }}
-      ></div>
 
       {/* Big Card */}
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-7xl mx-auto mb-8 relative z-10">
@@ -76,7 +71,7 @@ const HeaderAbout: React.FC = () => {
         {/* Photo Section */}
         <div className="md:w-1/3 flex justify-center items-center">
           <img
-            src="src/assets/images/cutout.jpg"
+            src="src/assets/images/mu photo.jpg"
             alt="Sahil Mohite"
             className="w-100 h-80 object-cover"
           />

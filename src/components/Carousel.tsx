@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import image1 from 'src/images/my photo.jpg'; 
+import image1 from '../assets/images/my photo.jpg'; 
 
 const BackgroundSection: React.FC = () => {
 

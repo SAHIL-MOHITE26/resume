@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
     imageUrl: './src/assets/images/sei-admin.jpg', // Local image path
-    externalLink: 'https://seiadmin.com', // External URL
+    externalLink: 'https://sei-adminpanel.netlify.app/', // External URL
   },
   {
     id: 5,

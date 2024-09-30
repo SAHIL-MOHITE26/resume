@@ -19,6 +19,7 @@ const AboutMe: React.FC = () => {
           >
             Download Resume
           </a>
+          <p className='mt-[-33px]'>( * Demo Resume )</p>
         </div>
       </section>
     </div>

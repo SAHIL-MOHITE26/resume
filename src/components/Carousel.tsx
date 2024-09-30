@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-
+import image1 from 'src/images/my photo.jpg'; 
 
 const BackgroundSection: React.FC = () => {
 
@@ -11,7 +11,13 @@ const BackgroundSection: React.FC = () => {
   };
 
   return (
-    
+    <div
+      className="h-screen bg-fixed bg-cover"
+      style={{
+        backgroundImage: `url(${image1})`, // Use the imported image here
+        backgroundPosition: 'center 1%', // Adjusted position slightly down
+      }}
+    >
       <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
         <h2 className="text-white text-5xl sm:text-6xl font-serif font-bold tracking-wide text-center">Sahil Mohite</h2>
         <h1 className="text-white text-lg sm:text-xl font-serif text-center">React JS | Front-End | UI/UX</h1>
@@ -22,7 +28,7 @@ const BackgroundSection: React.FC = () => {
       Contact Me
     </button>
       </div>
-    
+    </div>
   );
 };
 

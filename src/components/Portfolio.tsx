@@ -6,9 +6,9 @@ const Carousel: React.FC = () => {
   const navigate = useNavigate(); // Use useNavigate for navigation
 
   const images = [
-    'https://productiveshop.com/wp-content/uploads/2022/10/image30-1536x760.png.webp',
-    'https://websitesetup.org/wp-content/uploads/2020/12/OnePageLove.com-december-2020.jpg',
-    'https://colorlib.com/wp/wp-content/uploads/sites/2/cool-website-template-ideas.jpg',
+    'src/assets/images/junkyard.jpg',
+    'src/assets/images/portfolio.jpg',
+    'src/assets/images/sei-admin.jpg',
   ];
 
   React.useEffect(() => {

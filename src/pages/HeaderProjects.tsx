@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: 'Gadgets.in',
     description: 'FIGMA file.',
     status: 'completed',
-    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
+    imageUrl: 'https://sei-adminpanel.netlify.app/assets/logo-162ee3ec.svg', // Local image path
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
 ];

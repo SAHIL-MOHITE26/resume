@@ -16,7 +16,7 @@ const projects: Project[] = [
     title: 'Personal Portfolio',
     description: 'A personal website to showcase my work and skills.',
     status: 'completed',
-    imageUrl: './src/assets/images/portfolio.jpg', // Local image path
+    imageUrl: '/images/portfolio.jpg', // Public folder path
     externalLink: 'https://sahilmohite.netlify.app/home', // External URL
   },
   {
@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: 'JetSetWheels',
     description: 'An online store for selling products.',
     status: 'ongoing',
-    imageUrl: './src/images/jetsetwheels.jpg', // Local image path
+    imageUrl: '/images/jetsetwheels.jpg', // Public folder path
     externalLink: 'https://jetsetwheels.com', // External URL
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: 'JunkYard',
     description: 'A platform for writing and sharing blog posts.',
     status: 'completed',
-    imageUrl: './src/assets/images/junkyard.jpg', // Local image path
+    imageUrl: '/images/junkyard.jpg', // Public folder path
     externalLink: 'https://junkyard.com', // External URL
   },
   {
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: 'SEI Admin Panel',
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
-    imageUrl: './src/assets/images/sei-admin.jpg', // Local image path
+    imageUrl: '/images/sei-admin.jpg', // Public folder path
     externalLink: 'https://seiadmin.com', // External URL
   },
   {
@@ -48,10 +48,11 @@ const projects: Project[] = [
     title: 'Gadgets.in',
     description: 'FIGMA file.',
     status: 'completed',
-    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
+    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // External image URL
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
 ];
+
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'completed' | 'ongoing'>('all');

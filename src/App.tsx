@@ -10,7 +10,7 @@ import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop co
 import HeaderAbout from './pages/HeaderAbout';
 import HeaderContactMe from './pages/HeaderContactMe';
 import Projects from './pages/HeaderProjects';
-
+import CardGrid from './components/Services';
 
 
 const App: React.FC = () => {
@@ -30,7 +30,7 @@ const App: React.FC = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
           </Routes>
-          
+          <CardGrid/>
           <Footer />
           <ScrollToTop /> 
         </div>

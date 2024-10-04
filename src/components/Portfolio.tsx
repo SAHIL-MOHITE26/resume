@@ -7,7 +7,7 @@ const Carousel: React.FC = () => {
 
   const images = [
     'https://productiveshop.com/wp-content/uploads/2022/10/image30-1536x760.png.webp',
-    'https://websitesetup.org/wp-content/uploads/2020/12/OnePageLove.com-december-2020.jpg',
+    'https://bestfreehtmlcsstemplates.com/uploads/templates-images/13ff21b90b362a19d4a1513f1b6222f2.webp',
     'https://www.bookingpressplugin.com/wp-content/uploads/2024/01/Baker-Tilly.webp',
   ];
 
@@ -40,12 +40,12 @@ const Carousel: React.FC = () => {
                 <img
                   src={image}
                   alt={`Slide ${index + 1}`}
-                  className="w-[1800px] h-full object-cover rounded-lg mb-2" // Keep rounded corners for images
+                  className="w-[1800px] h-full object-cover rounded-t-2xl mb-1" // Keep rounded corners for images
                 />
-        <div className='bg-gray-800 h-16 rounded-lg'>
+        <div className=' h-16'>
         </div>
         <button
-          className='bg-white font-bold font-serif text-black px-80 py-2  mt-[-50px] ml-auto block mx-auto ' // Center button and adjust margin
+          className='bg-white font-bold font-serif text-black px-[702px] py-2 mb-5 mt-[-60px] ml-auto block mx-auto ' // Center button and adjust margin
           onClick={handleSeeMoreClick} // Add onClick handler
         >
          Work Done

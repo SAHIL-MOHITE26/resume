@@ -58,7 +58,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <div className="w-full p-8 bg-gray-800 mb-10">
+    <div className="w-full p-8 bg-gray-800 rounded-lg mb-10">
       <h1 className="text-5xl font-bold mb-6 text-white font-serif text-center">Skills</h1>
       <h2 className='text-center mb-10 text-white'>
         As a front-end web developer, I create visually appealing and user-friendly interfaces. Proficient in HTML, CSS, and JavaScript, I use React.js to build dynamic, responsive web applications. My UI/UX design expertise enables me to craft intuitive layouts for seamless interaction across devices. Familiar with Git for version control, I ensure efficient collaboration and code management, aiming to blend aesthetics with functionality for high-quality web solutions.

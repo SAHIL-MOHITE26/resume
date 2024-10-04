@@ -30,9 +30,9 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'JunkYard',
-    description: 'A platform for writing and sharing blog posts.',
+    description: 'A platform for your style.',
     status: 'completed',
-    imageUrl: './src/assets/images/junkyard.jpg', // Local image path
+    imageUrl: '', // Local image path
     externalLink: 'https://junkyard.com', // External URL
   },
   {

@@ -11,6 +11,8 @@ import HeaderAbout from './pages/HeaderAbout';
 import HeaderContactMe from './pages/HeaderContactMe';
 import Projects from './pages/HeaderProjects';
 
+
+
 const App: React.FC = () => {
   return (
    
@@ -28,7 +30,7 @@ const App: React.FC = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
           </Routes>
-
+          
           <Footer />
           <ScrollToTop /> 
         </div>

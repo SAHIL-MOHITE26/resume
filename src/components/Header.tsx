@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`p-4 sm:p-8 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center  ">
         <h1 className={`text-2xl sm:text-3xl font-bold font-serif ${isDarkMode ? 'text-white' : 'text-black'}`}>
           SM
         </h1>

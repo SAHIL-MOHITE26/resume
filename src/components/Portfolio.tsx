@@ -8,7 +8,7 @@ const Carousel: React.FC = () => {
   const images = [
     'https://productiveshop.com/wp-content/uploads/2022/10/image30-1536x760.png.webp',
     'https://websitesetup.org/wp-content/uploads/2020/12/OnePageLove.com-december-2020.jpg',
-    'https://colorlib.com/wp/wp-content/uploads/sites/2/cool-website-template-ideas.jpg',
+    'https://www.bookingpressplugin.com/wp-content/uploads/2024/01/Baker-Tilly.webp',
   ];
 
   React.useEffect(() => {
@@ -26,17 +26,9 @@ const Carousel: React.FC = () => {
 
   return (
     <>
-      <div>
-        <h1 className='text-5xl font-serif font-bold text-center mt-10 mb-2'>Portfolio</h1>
-        <button
-          className='bg-black text-white px-4 py-2 mb-2 ml-auto block mx-auto rounded-lg' // Center button and adjust margin
-          onClick={handleSeeMoreClick} // Add onClick handler
-        >
-          See more
-        </button>
-      </div>
-      <div className="flex justify-center mb-12">
-        <div className="relative w-full max-w-7xl mx-auto h-[500px] md:h-[600px] lg:h-[700px]">
+      
+      <div className="flex justify-center mb-[68px] mt-1">
+        <div className="relative  w-[1500px] mx-auto lg:h-[500px]">
           <div className="overflow-hidden rounded-lg">
             {images.map((image, index) => (
               <div
@@ -48,10 +40,21 @@ const Carousel: React.FC = () => {
                 <img
                   src={image}
                   alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover rounded-lg" // Keep rounded corners for images
+                  className="w-[1800px] h-full object-cover rounded-lg mb-2" // Keep rounded corners for images
                 />
+        <div className='bg-gray-800 h-16 rounded-lg'>
+        </div>
+        <button
+          className='bg-white font-bold font-serif text-black px-80 py-2  mt-[-50px] ml-auto block mx-auto ' // Center button and adjust margin
+          onClick={handleSeeMoreClick} // Add onClick handler
+        >
+         Work Done
+        </button>
               </div>
+              
+              
             ))}
+           
           </div>
         </div>
       </div>

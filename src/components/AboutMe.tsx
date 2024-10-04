@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="w-full sm:w-[1568px] mx-auto p-4 sm:p-6 mb-[-60px]">
+    <div className="w-full sm:w-[1568px]  ml-[-25px] mx-auto p-4 sm:p-6 mb-[-60px]">
       {/* Container with rounded corners */}
       <div className="bg-white shadow-lg rounded-lg p-6 mt-[-40px]">
         {/* Title */}

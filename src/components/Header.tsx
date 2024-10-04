@@ -30,12 +30,15 @@ const Header: React.FC = () => {
 
   return (
     <header className={`p-4 sm:p-8 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center  ">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+        {/* Logo */}
         <h1 className={`text-2xl sm:text-3xl font-bold font-serif ${isDarkMode ? 'text-white' : 'text-black'}`}>
           SM
         </h1>
-        <nav className="flex-grow">
-          <ul className={`flex flex-col sm:flex-row ml-[520px] space-y-2 sm:space-y-0 sm:space-x-4 items-center gap-4 font-serif ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        
+        {/* Navigation Links */}
+        <nav className="flex-grow sm:flex sm:justify-center">
+          <ul className={`flex flex-col sm:flex-row space-y-2 ml-[120px] sm:space-y-0 sm:space-x-6 items-center gap-4 font-serif ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <li>
               <a href="/home" className="hover:underline">Home</a>
             </li>
@@ -50,20 +53,22 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="flex space-x-4 mt-2 sm:mt-0 items-center">
-          {/* Sliding Theme Toggle Button */}
+
+        {/* Social Media & Theme Toggle */}
+        <div className="flex space-x-4 mt-4 sm:mt-0 items-center">
+          {/* Theme Toggle Button */}
           <button
             onClick={toggleDarkMode}
-            className=" mr-10 relative w-14 h-8 bg-gray-300 dark:bg-gray-600 rounded-full focus:outline-none transition-colors duration-300 flex items-center"
+            className="relative w-14 h-8 bg-gray-300 dark:bg-gray-600 rounded-full focus:outline-none transition-colors duration-300 flex items-center"
           >
             <span
-              className={`absolute left-1 transition-transform duration-300 transform ${
-                isDarkMode ? 'translate-x-6' : 'translate-x-0'
-              }`}
+              className={`absolute left-1 transition-transform duration-300 transform ${isDarkMode ? 'translate-x-6' : 'translate-x-0'}`}
             >
               {isDarkMode ? <FaSun size={20} className="text-yellow-400" /> : <FaMoon size={20} className="text-gray-500" />}
             </span>
           </button>
+
+          {/* Social Icons */}
           <a href="https://www.linkedin.com/in/sahil-mohite-a39957235/" className={`${isDarkMode ? 'text-white' : 'text-black'} hover:text-blue-600`}>
             <FaLinkedin size={24} />
           </a>

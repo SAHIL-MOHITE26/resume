@@ -11,7 +11,7 @@ import HeaderAbout from './pages/HeaderAbout';
 import HeaderContactMe from './pages/HeaderContactMe';
 import Projects from './pages/HeaderProjects';
 import CardGrid from './components/Services';
-
+import BuyMeCoffee from './pages/BuyMeACoffee';
 
 const App: React.FC = () => {
   return (
@@ -27,6 +27,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/buy-coffee" element={<BuyMeCoffee />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
           </Routes>

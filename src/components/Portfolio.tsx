@@ -25,40 +25,27 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <>
-      
-      <div className="flex justify-center mb-[68px] mt-1">
-        <div className="relative  w-[1500px] mx-auto lg:h-[500px]">
-          <div className="overflow-hidden rounded-lg">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`transition-opacity duration-700 ease-in-out absolute inset-0 ${
-                  index === currentIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="w-[1800px] h-full object-cover rounded-t-2xl mb-1" // Keep rounded corners for images
-                />
-        <div className=' h-16'>
+    <div className="flex justify-center mb-[68px] mt-1">
+      <div className="relative w-full lg:w-[1500px] mx-auto lg:h-[500px]">
+        <div className="overflow-hidden rounded-lg">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`transition-opacity duration-700 ease-in-out absolute inset-0 ${
+                index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover rounded-t-2xl" // Make image responsive
+              />
+            </div>
+          ))}
         </div>
-        <button
-          className='bg-white font-bold font-serif text-black px-[702px] py-2 mb-5 mt-[-60px] ml-auto block mx-auto ' // Center button and adjust margin
-          onClick={handleSeeMoreClick} // Add onClick handler
-        >
-         Work Done
-        </button>
-              </div>
-              
-              
-            ))}
-           
-          </div>
-        </div>
+        
       </div>
-    </>
+    </div>
   );
 };
 

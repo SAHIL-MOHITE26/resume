@@ -4,6 +4,9 @@ import { FaLinkedin, FaFacebook, FaInstagram, FaMoon, FaSun } from 'react-icons/
 const Header: React.FC = () => {
   // State for managing the theme (light/dark)
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  
+  // State for managing the background color of the "Buy Me Coffee" link
+  const [coffeeLinkBg, setCoffeeLinkBg] = useState<string>('bg-yellow-300');
 
   // Toggle theme between light and dark
   const toggleDarkMode = () => {
@@ -28,6 +31,11 @@ const Header: React.FC = () => {
     }
   }, [isDarkMode]);
 
+  // Handle click on the "Buy Me Coffee" link
+  const handleCoffeeLinkClick = () => {
+    setCoffeeLinkBg('bg-white'); // Change the background color to white
+  };
+
   return (
     <header className={`p-4 sm:p-8 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
@@ -50,6 +58,15 @@ const Header: React.FC = () => {
             </li>
             <li>
               <a href="/contact" className="hover:underline">Contact</a>
+            </li>
+            <li>
+              <a 
+                href="/buy-me-a-coffee" 
+                className={`hover:underline ${coffeeLinkBg} text-black p-2`} // Add text color and padding for better visibility
+                onClick={handleCoffeeLinkClick} // Set the click handler
+              >
+                Buy Me Coffee
+              </a>
             </li>
           </ul>
         </nav>

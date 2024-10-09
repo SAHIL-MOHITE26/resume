@@ -35,7 +35,7 @@ const PaymentPage: React.FC = () => {
           <p className="text-gray-600 mb-4">You are about to pay:</p>
 
           <div className="bg-yellow-300 text-gray-800 font-bold text-3xl md:text-4xl text-center py-4 rounded-lg mb-7 shadow-md">
-            ${amount}
+          ₹{amount}
           </div>
 
           <p className="text-gray-600 mb-8">

@@ -12,9 +12,9 @@ const BuyMeCoffee: React.FC = () => {
   const navigate = useNavigate(); // Initialize navigate hook
 
   const coffeeOptions: CoffeeOption[] = [
-    { label: 'Buy Short Coffee', amount: 5, image: 'https://img.freepik.com/premium-psd/paper-cup-coffee-small-size-mockup_474486-664.jpg' },
-    { label: 'Buy Tall Coffee', amount: 15, image: 'https://i.pinimg.com/736x/73/33/b6/7333b6558038e5afe36e908e676850e1.jpg' },
-    { label: 'Buy Grande Coffee', amount: 25, image: 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-coffee-png-image_2651902.jpg' },
+    { label: 'Buy Short Coffee', amount: 50, image: 'https://img.freepik.com/premium-psd/paper-cup-coffee-small-size-mockup_474486-664.jpg' },
+    { label: 'Buy Tall Coffee', amount: 150, image: 'https://i.pinimg.com/736x/73/33/b6/7333b6558038e5afe36e908e676850e1.jpg' },
+    { label: 'Buy Grande Coffee', amount: 250, image: 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-coffee-png-image_2651902.jpg' },
   ];
 
   const handleSelectAmount = (amount: number) => {
@@ -58,7 +58,7 @@ const BuyMeCoffee: React.FC = () => {
               />
               <div className="flex-1">
                 <p className="text-xl font-semibold">{option.label}</p>
-                <p className="text-lg">${option.amount}</p>
+                <p className="text-lg">₹{option.amount}</p>
               </div>
             </div>
           ))}

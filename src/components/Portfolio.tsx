@@ -26,7 +26,7 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="flex justify-center mt-[70px] ">
-      <div className="relative w-full lg:w-[1600px] mx-auto lg:h-[420px]">
+      <div className="relative w-full lg:w-[1500px] mx-auto lg:h-[420px]">
         <div className="overflow-hidden rounded-lg">
           {images.map((image, index) => (
             <div
@@ -38,7 +38,7 @@ const Carousel: React.FC = () => {
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover  mt-[-20px]" // Make image responsive
+                className="w-full h-full object-cover  rounded-lg mt-[-20px]" // Make image responsive
               />
             </div>
           ))}

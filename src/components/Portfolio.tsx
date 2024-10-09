@@ -6,7 +6,7 @@ const Carousel: React.FC = () => {
   const navigate = useNavigate(); // Use useNavigate for navigation
 
   const images = [
-    'https://thomasdigital.com/wp-content/uploads/2021/09/Arnold-Itkin-LLP-1-2.jpg',
+    'https://marketplace.canva.com/EAFYC8yWXio/1/0/1600w/canva-green-minimalist-landscape-quote-desktop-wallpaper-OuM9mjCoT60.jpg',
     'https://bestfreehtmlcsstemplates.com/uploads/templates-images/13ff21b90b362a19d4a1513f1b6222f2.webp',
     'https://www.bookingpressplugin.com/wp-content/uploads/2024/01/Baker-Tilly.webp',
   ];
@@ -25,8 +25,8 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center mb-[68px] mt-1">
-      <div className="relative w-full lg:w-[1500px] mx-auto lg:h-[500px]">
+    <div className="flex justify-center mt-[70px] ">
+      <div className="relative w-full lg:w-[1600px] mx-auto lg:h-[420px]">
         <div className="overflow-hidden rounded-lg">
           {images.map((image, index) => (
             <div
@@ -38,7 +38,7 @@ const Carousel: React.FC = () => {
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover rounded-t-2xl" // Make image responsive
+                className="w-full h-full object-cover  mt-[-20px]" // Make image responsive
               />
             </div>
           ))}

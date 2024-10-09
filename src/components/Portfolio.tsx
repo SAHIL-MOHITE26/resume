@@ -6,7 +6,7 @@ const Carousel: React.FC = () => {
   const navigate = useNavigate(); // Use useNavigate for navigation
 
   const images = [
-    'https://productiveshop.com/wp-content/uploads/2022/10/image30-1536x760.png.webp',
+    'https://thomasdigital.com/wp-content/uploads/2021/09/Arnold-Itkin-LLP-1-2.jpg',
     'https://bestfreehtmlcsstemplates.com/uploads/templates-images/13ff21b90b362a19d4a1513f1b6222f2.webp',
     'https://www.bookingpressplugin.com/wp-content/uploads/2024/01/Baker-Tilly.webp',
   ];

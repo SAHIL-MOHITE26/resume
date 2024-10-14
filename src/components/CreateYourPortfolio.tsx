@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type CarouselItem = {
   imageSrc: string;
@@ -27,7 +28,13 @@ const carouselItems: CarouselItem[] = [
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false); // State for pop-up
-  
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/contact'); // Replace '/your-new-page' with the desired route
+  };
+
   // Keep description and button text constant
   const constantDescription = "Want to create your portfolio? Let's do it!";
   const constantButtonText = "Click Here";
@@ -98,7 +105,7 @@ const Carousel: React.FC = () => {
                 </button>
                 <button 
                   className="inline-block px-6 py-3 bg-transparent font-semibold text-gray-500 border border-gray-500 hover:bg-green-500 hover:text-white text-center transition-all duration-200"
-                  onClick={closePopUp}
+                  onClick={handleRedirect}
                 >
                   Give your idea
                 </button>
@@ -112,3 +119,4 @@ const Carousel: React.FC = () => {
 };
 
 export default Carousel;
+x

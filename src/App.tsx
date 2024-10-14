@@ -14,6 +14,8 @@ import CardGrid from './components/Services';
 import BuyMeCoffee from './pages/BuyMeACoffee';
 import PaymentPage from './pages/Payment';
 import ServicesPage from './pages/OurServices';
+import SocialsPage from './pages/Socials';
+import Create from './components/CreateYourPortfolio';
 
 const App: React.FC = () => {
   return (
@@ -25,17 +27,17 @@ const App: React.FC = () => {
           {/* Define Routes for different sections */}
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><CardGrid/></>} />
+            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><CardGrid/></>} />
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/buy-me-a-coffee" element={<BuyMeCoffee   />} />
             <Route path="/our-services" element={<ServicesPage   />} />
+            <Route path="/socials" element={<SocialsPage   />} />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}
           </Routes>
-          
           <Footer />
           <ScrollToTop /> 
         </div>

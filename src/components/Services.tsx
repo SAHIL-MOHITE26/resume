@@ -49,10 +49,11 @@ const CardGrid: React.FC = () => {
       },
     },
     {
-      title: 'Book your slot',
-      image: 'https://miro.medium.com/v2/resize:fit:1400/1*pE5cYSFDmx0jZpjapjgPhA.png',
+      title: 'Follow me on socials',
+      image: 'https://www.kindpng.com/picc/m/637-6377380_btn-follow-me-on-social-media-calligraphy-hd.png',
       onClick: () => {
         // Add logic for navigation if needed
+        navigate('/socials');
       },
     },
   ];

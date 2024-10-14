@@ -35,8 +35,16 @@ const projects: Project[] = [
     imageUrl: '', // Local image path
     externalLink: 'https://junkyard.com', // External URL
   },
-  {
+  { 
     id: 4,
+    title: 'Videography Portfolio',
+    description: 'HTML file.',
+    status: 'completed',
+    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
+    externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
+  },
+  {
+    id: 5,
     title: 'SEI Admin Panel',
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
@@ -44,13 +52,14 @@ const projects: Project[] = [
     externalLink: 'https://sei-adminpanel.netlify.app/', // External URL
   },
   { 
-    id: 5,
+    id: 6,
     title: 'Gadgets.in',
     description: 'FIGMA file.',
     status: 'completed',
     imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
+
 ];
 
 const Projects: React.FC = () => {

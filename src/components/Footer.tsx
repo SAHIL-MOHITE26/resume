@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
         <div>
           <ul className="flex justify-center space-x-4 sm:justify-end">
             <li>
-              <a href="#" className="hover:text-gray-400">Home</a>
+              <a href="/" className="hover:text-gray-400">Home</a>
             </li>
             <li>
               <a href="/about" className="hover:text-gray-400">About</a>
             </li>
             <li>
-              <a href="#skills" className="hover:text-gray-400">Skills</a>
+              <a href="#" className="hover:text-gray-400">Skills</a>
             </li>
             <li>
               <a href="/contact" className="hover:text-gray-400">Contact</a>

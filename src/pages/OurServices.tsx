@@ -31,7 +31,7 @@ const services: Service[] = [
 const ServicesPage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center bg-gray-800 p-2 text-white rounded-t-lg ">My Services</h1>
+      <h1 className="text-4xl font-bold text-center bg-gray-800 p-2 text-white rounded-t-lg mt-2">My Services</h1>
       <style>{`
         .flip-card {
           background-color: transparent;

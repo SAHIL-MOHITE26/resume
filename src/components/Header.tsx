@@ -48,22 +48,42 @@ const Header: React.FC = () => {
         <nav className="flex-grow sm:flex sm:justify-center">
           <ul className={`flex flex-col sm:flex-row space-y-2 ml-[120px] sm:space-y-0 sm:space-x-6 items-center gap-4 font-serif ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <li>
-              <a href="/home" className="hover:underline">Home</a>
+              <a 
+                href="/home" 
+                className="transform transition-transform duration-300 opacity-80 hover:opacity-100 hover:scale-125"
+              >
+                Home
+              </a>
             </li>
             <li>
-              <a href="/about" className="hover:underline">About</a>
+              <a 
+                href="/about" 
+                className="transform transition-transform duration-300 opacity-80 hover:opacity-100 hover:scale-125"
+              >
+                About
+              </a>
             </li>
             <li>
-              <a href="/projects" className="hover:underline">Projects</a>
+              <a 
+                href="/projects" 
+                className="transform transition-transform duration-300 opacity-80 hover:opacity-100 hover:scale-125"
+              >
+                Projects
+              </a>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">Contact</a>
+              <a 
+                href="/contact" 
+                className="transform transition-transform duration-300 opacity-80 hover:opacity-100 hover:scale-125"
+              >
+                Contact
+              </a>
             </li>
             <li>
               <a 
                 href="/buy-me-a-coffee" 
-                className={`hover:underline ${coffeeLinkBg} text-black p-2`} // Add text color and padding for better visibility
-                onClick={handleCoffeeLinkClick} // Set the click handler
+                className={`hover:underline ${coffeeLinkBg} text-black p-2`} 
+                onClick={handleCoffeeLinkClick}
               >
                 Buy Me Coffee
               </a>

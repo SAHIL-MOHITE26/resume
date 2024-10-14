@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const HeaderAbout: React.FC = () => {
   // Array of images for the small cards
   const cardImages = [

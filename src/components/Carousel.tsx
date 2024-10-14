@@ -52,7 +52,7 @@ const BackgroundSection: React.FC = () => {
 
         {/* Button Animation */}
         <button
-          className={`mt-4 px-6 py-2 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition duration-200 transform transition-all duration-1000 ${
+          className={`mt-4 px-6 py-2 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition duration-200  ${
             isButtonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           onClick={handleButtonClick}

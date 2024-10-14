@@ -37,6 +37,7 @@ const CardGrid: React.FC = () => {
       image: 'https://www.yeta.in/Content/img/Services.png',
       onClick: () => {
         // Add logic for navigation if needed
+        navigate('/our-services');
       },
     },
     {

@@ -17,6 +17,7 @@ import SocialsPage from './pages/Socials';
 import Create from './components/CreateYourPortfolio';
 import MyPortfolio from './components/Myportfolio';
 import Myservices from './components/Myservices';
+import Templates from './pages/Template';
 
 
 
@@ -35,7 +36,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/buy-me-a-coffee" element={<BuyMeCoffee   />} />
-            
+            <Route path="/template" element={<Templates   />} />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}

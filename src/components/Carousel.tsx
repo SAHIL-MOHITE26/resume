@@ -33,7 +33,9 @@ const BackgroundSection: React.FC = () => {
     >
       <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
         {/* Main Title Animation */}
-        <h1 className=' text-4xl text-white mb-3 mt-[-70px]'>
+        <h1 className={`text-white text-4xl mb-2 tracking-wide text-center transform transition-all duration-1000 ${
+            isTextVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+          }`}>
           Hello, I'm
         </h1>
         <h2 

@@ -101,7 +101,7 @@ const Carousel: React.FC = () => {
               <div className="flex justify-between">
                 <button 
                   className="inline-block px-6 py-3 bg-transparent font-semibold text-gray-500 border border-gray-500 hover:bg-blue-500 hover:text-white text-center transition-all duration-200"
-                  onClick={() => window.location.href = 'https://colorlib.com/wp/cat/portfolio/'}
+                  onClick={() => window.location.href = '/template'}
                 >
                   Choose your template
                 </button>

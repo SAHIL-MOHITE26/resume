@@ -65,7 +65,7 @@ const MyPortfolio: React.FC = () => {
       </div>
 
       {/* Portfolio Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
         {filteredProjects.map((project) => (
           <a key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className={`relative bg-gray-700 overflow-hidden text-white flex flex-col ${getCardHeight(project.id)} group`}>
             {/* Image Section */}

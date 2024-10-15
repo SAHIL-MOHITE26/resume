@@ -32,7 +32,7 @@ const projects: Project[] = [
     description: 'An online store for selling products.',
     status: 'ongoing',
     imageUrl: "https://www.jetsetrims.com/", // Imported local image
-    externalLink: 'https://jetsetwheels.com', // External URL
+    externalLink: 'https://www.jetsetrims.com/', // External URL
   },
   {
     id: 3,

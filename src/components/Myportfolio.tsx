@@ -29,7 +29,7 @@ const MyPortfolio: React.FC = () => {
   };
 
   return (
-    <div className="w-full p-8 bg-gray-800 mb-40">
+    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600  mb-40">
       <h1 className="text-5xl mb-6 text-white text-center mt-12">My Portfolio</h1>
 
       <div className="flex justify-center space-x-4 mb-8">

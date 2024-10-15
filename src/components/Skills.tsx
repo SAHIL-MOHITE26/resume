@@ -16,11 +16,11 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <div className="w-full p-8 bg-gray-800 mb-9">
+    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 mb-9">
       <div className="flex flex-col md:flex-row md:space-x-8 h-full">
         {/* Skills List Section */}
         <section className="flex-1 text-white mb-8 md:mb-0">
-          <h1 className="ml-20 font-bold text-5xl mt-8">My Skills</h1>
+          <h1 className="ml-20 font-bold text-5xl mt-7">My Skills</h1>
           <hr className="w-80 border-lime-400 mt-5 ml-20"></hr>
           <h2 className="ml-20 mt-4 mr-2">
             "As a front-end web developer, I specialize in creating engaging and responsive user interfaces. My skills are rooted in HTML & CSS, the building blocks of web design, allowing me to craft visually appealing and structurally sound layouts. With JavaScript, I bring functionality and interactivity to websites, ensuring a dynamic user experience.
@@ -37,7 +37,7 @@ const Skills: React.FC = () => {
             </button>
             <button 
               className="bg-transparent border border-lime-400 text-lime-400 font-semibold py-2 px-4 rounded hover:bg-lime-500 hover:text-black transition duration-300"
-              onClick={() => navigate('/resume')} // Redirects to '/resume' page
+              onClick={() => navigate('/Videography.html')} // Redirects to '/resume' page
             >
               Download Resume
             </button>

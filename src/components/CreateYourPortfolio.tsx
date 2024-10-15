@@ -31,8 +31,10 @@ const Carousel: React.FC = () => {
 
   const navigate = useNavigate();
 
+  
   const handleRedirect = () => {
-    navigate('/contact'); // Replace '/your-new-page' with the desired route
+    navigate('/contact');
+     // Replace '/your-new-page' with the desired route
   };
 
   // Keep description and button text constant
@@ -56,7 +58,7 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-200 p-4 mt-[-35px] rounded-lg">
+    <div className="flex items-center justify-center bg-white p-4 mt-[-35px] rounded-lg">
       <div className="w-1/2">
         <img 
           src={carouselItems[currentIndex].imageSrc} 
@@ -99,7 +101,7 @@ const Carousel: React.FC = () => {
               <div className="flex justify-between">
                 <button 
                   className="inline-block px-6 py-3 bg-transparent font-semibold text-gray-500 border border-gray-500 hover:bg-blue-500 hover:text-white text-center transition-all duration-200"
-                  onClick={closePopUp}
+                  onClick={() => window.location.href = 'https://colorlib.com/wp/cat/portfolio/'}
                 >
                   Choose your template
                 </button>

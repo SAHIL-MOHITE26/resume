@@ -33,6 +33,9 @@ const BackgroundSection: React.FC = () => {
     >
       <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
         {/* Main Title Animation */}
+        <h1 className=' text-4xl text-white mb-3 mt-[-70px]'>
+          Hello, I'm
+        </h1>
         <h2 
           className={`text-white text-5xl sm:text-6xl font-serif font-bold tracking-wide text-center transform transition-all duration-1000 ${
             isTextVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
@@ -43,7 +46,7 @@ const BackgroundSection: React.FC = () => {
 
         {/* Subtext Animation */}
         <h1 
-          className={`text-white text-lg sm:text-xl font-serif text-center mt-1 transform transition-all duration-1000 ${
+          className={`text-white text-1xl sm:text-1xl font-serif text-center mt-1 transform transition-all duration-1000 ${
             isSubTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           }`}
         >

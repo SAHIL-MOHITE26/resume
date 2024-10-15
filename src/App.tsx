@@ -16,6 +16,7 @@ import PaymentPage from './pages/Payment';
 import ServicesPage from './pages/OurServices';
 import SocialsPage from './pages/Socials';
 import Create from './components/CreateYourPortfolio';
+import MyPortfolio from './components/Myportfolio';
 
 
 const App: React.FC = () => {
@@ -28,7 +29,7 @@ const App: React.FC = () => {
           {/* Define Routes for different sections */}
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><CardGrid/></>} />
+            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><MyPortfolio/><CardGrid/></>} />
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />

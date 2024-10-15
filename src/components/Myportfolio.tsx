@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import portfolioImage from '/src/assets/images/portfolio.jpg';
+import seiAdminImage from '/src/assets/images/sei-admin.jpg';
+import gadgetsImage from '/src/assets/images/gadjets.png';
 
 const MyPortfolio: React.FC = () => {
   // Sample project data with images and links
   const projects = [
-    { id: 1, title: 'Personal Portfolio', category: 'Completed', imgSrc: './src/assets/images/portfolio.jpg', link: 'https://sahilmohite.netlify.app' },
+    { id: 1, title: 'Personal Portfolio', category: 'Completed', imgSrc: portfolioImage, link: 'https://sahilmohite.netlify.app' },
     { id: 2, title: 'JunkYard', category: 'Completed', imgSrc: 'https://varner.com/globalassets/our_consepts/junkyard/junkyard_20_mob.jpg', link: 'https://junkyard.com' },
-    { id: 3, title: 'Gadgets.in', category: 'Completed', imgSrc: 'src/assets/images/gadjets.png', link: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev' },
+    { id: 3, title: 'Gadgets.in', category: 'Completed', imgSrc: gadgetsImage, link: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev' },
     { id: 4, title: 'Project 4', category: 'Ongoing', imgSrc: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', link: 'https://yourproject4.com' },
-    { id: 5, title: 'SEI Admin Panel', category: 'Completed', imgSrc: './src/assets/images/sei-admin.jpg', link: 'https://sei-adminpanel.netlify.app/' },
-    { id: 6, title: 'Photography Portfolio', category: 'Completed', imgSrc: './src/assets/images/sei-admin.jpg', link: 'https://sei-adminpanel.netlify.app/' },
-   
+    { id: 5, title: 'SEI Admin Panel', category: 'Completed', imgSrc: seiAdminImage, link: 'https://sei-adminpanel.netlify.app/' },
+    { id: 6, title: 'Photography Portfolio', category: 'Completed', imgSrc: seiAdminImage, link: 'https://sei-adminpanel.netlify.app/' },
   ];
 
   // State for the selected filter

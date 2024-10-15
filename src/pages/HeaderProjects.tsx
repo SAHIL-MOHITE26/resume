@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaClock } from 'react-icons/fa';
 
+// Importing local images
+import portfolioImage from '/src/assets/images/portfolio.jpg';
+import junkyardImage from '/src/assets/images/junkyard.jpg';
+import seiAdminImage from '/src/assets/images/sei-admin.jpg';
+
+// Interface for Project
 interface Project {
   id: number;
   title: string;
@@ -10,13 +16,14 @@ interface Project {
   externalLink: string; // External URL
 }
 
+// Sample Projects Data
 const projects: Project[] = [
   {
     id: 1,
     title: 'Personal Portfolio',
     description: 'A personal website to showcase my work and skills.',
     status: 'completed',
-    imageUrl: './src/assets/images/portfolio.jpg', // Local image path
+    imageUrl: portfolioImage, // Imported local image
     externalLink: 'https://sahilmohite.netlify.app/home', // External URL
   },
   {
@@ -24,7 +31,7 @@ const projects: Project[] = [
     title: 'JetSetWheels',
     description: 'An online store for selling products.',
     status: 'ongoing',
-    imageUrl: './src/images/jetsetwheels.jpg', // Local image path
+    imageUrl: "https://www.jetsetrims.com/", // Imported local image
     externalLink: 'https://jetsetwheels.com', // External URL
   },
   {
@@ -32,7 +39,7 @@ const projects: Project[] = [
     title: 'JunkYard',
     description: 'A platform for your style.',
     status: 'completed',
-    imageUrl: '', // Local image path
+    imageUrl: junkyardImage, // Imported local image
     externalLink: 'https://junkyard.com', // External URL
   },
   { 
@@ -40,7 +47,7 @@ const projects: Project[] = [
     title: 'Videography Portfolio',
     description: 'HTML file.',
     status: 'completed',
-    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
+    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // External image URL
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
   {
@@ -48,7 +55,7 @@ const projects: Project[] = [
     title: 'SEI Admin Panel',
     description: 'An app to manage and track tasks efficiently.',
     status: 'ongoing',
-    imageUrl: './src/assets/images/sei-admin.jpg', // Local image path
+    imageUrl: seiAdminImage, // Imported local image
     externalLink: 'https://sei-adminpanel.netlify.app/', // External URL
   },
   { 
@@ -56,10 +63,9 @@ const projects: Project[] = [
     title: 'Gadgets.in',
     description: 'FIGMA file.',
     status: 'completed',
-    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // Local image path
+    imageUrl: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', // External image URL
     externalLink: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev', // External URL
   },
-
 ];
 
 const Projects: React.FC = () => {
@@ -80,25 +86,19 @@ const Projects: React.FC = () => {
       <div className="mb-6 text-center">
         <button
           onClick={() => setFilter('all')}
-          className={`mx-2 px-4 py-1 rounded-lg ${
-            filter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-          }`}
+          className={`mx-2 px-4 py-1 rounded-lg ${filter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
         >
           All
         </button>
         <button
           onClick={() => setFilter('completed')}
-          className={`mx-2 px-4 py-1 rounded-lg ${
-            filter === 'completed' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-          }`}
+          className={`mx-2 px-4 py-1 rounded-lg ${filter === 'completed' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
         >
           Completed
         </button>
         <button
           onClick={() => setFilter('ongoing')}
-          className={`mx-2 px-4 py-1 rounded-lg ${
-            filter === 'ongoing' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-          }`}
+          className={`mx-2 px-4 py-1 rounded-lg ${filter === 'ongoing' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
         >
           Ongoing
         </button>

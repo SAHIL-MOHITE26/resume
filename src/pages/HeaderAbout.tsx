@@ -1,5 +1,5 @@
 import React from "react";
-
+import cutoutImage from "/src/assets/images/cutout.jpg";
 
 const HeaderAbout: React.FC = () => {
   // Array of images for the small cards
@@ -72,7 +72,7 @@ const HeaderAbout: React.FC = () => {
         {/* Photo Section */}
         <div className="md:w-1/3 flex justify-center items-center">
           <img
-            src="src/assets/images/cutout.jpg"
+            src={cutoutImage}
             alt="Sahil Mohite"
             className="w-100 h-80 object-cover"
           />

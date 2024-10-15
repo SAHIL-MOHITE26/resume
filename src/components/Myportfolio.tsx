@@ -8,6 +8,7 @@ const MyPortfolio: React.FC = () => {
     { id: 3, title: 'Gadgets.in', category: 'Completed', imgSrc: 'src/assets/images/gadjets.png', link: 'https://www.figma.com/design/cHbTG4tjDAyDnkzeecm3HE/Gadgets.in?node-id=29-76&m=dev' },
     { id: 4, title: 'Project 4', category: 'Ongoing', imgSrc: 'https://media.licdn.com/dms/image/C4D12AQHTWmXtImF2sw/article-cover_image-shrink_720_1280/0/1578556490672?e=2147483647&v=beta&t=GUbMSYJ4ekAJkRsZoFYWOjV7v47x0wUFZsHTFRrg5pM', link: 'https://yourproject4.com' },
     { id: 5, title: 'SEI Admin Panel', category: 'Completed', imgSrc: './src/assets/images/sei-admin.jpg', link: 'https://sei-adminpanel.netlify.app/' },
+    { id: 6, title: 'Photography Portfolio', category: 'Completed', imgSrc: './src/assets/images/sei-admin.jpg', link: 'https://sei-adminpanel.netlify.app/' },
    
   ];
 
@@ -26,35 +27,35 @@ const MyPortfolio: React.FC = () => {
   };
 
   return (
-    <div className="w-full p-8 bg-white mb-40">
-      <h1 className="text-5xl mb-6 text-black text-center mt-12">My Portfolio</h1>
+    <div className="w-full p-8 bg-gray-800 mb-40">
+      <h1 className="text-5xl mb-6 text-white text-center mt-12">My Portfolio</h1>
 
       <div className="flex justify-center space-x-4 mb-8">
         {/* Filter Buttons */}
         <button 
           className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'All' ? 'text-lime-400' : 'text-black hover:text-lime-400'}`}
+              ${selectedFilter === 'All' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
           onClick={() => setSelectedFilter('All')}
         >
           All
         </button>
         <button 
           className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Completed' ? 'text-lime-400' : 'text-black hover:text-lime-400'}`}
+              ${selectedFilter === 'Completed' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
           onClick={() => setSelectedFilter('Completed')}
         >
           Completed
         </button>
         <button 
           className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Ongoing' ? 'text-lime-400' : 'text-black hover:text-lime-400'}`}
+              ${selectedFilter === 'Ongoing' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
           onClick={() => setSelectedFilter('Ongoing')}
         >
           Ongoing
         </button>
         <button 
           className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Upcoming' ? 'text-lime-400' : 'text-black hover:text-lime-400'}`}
+              ${selectedFilter === 'Upcoming' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
           onClick={() => setSelectedFilter('Upcoming')}
         >
           Upcoming

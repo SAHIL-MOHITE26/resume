@@ -13,10 +13,11 @@ import Projects from './pages/HeaderProjects';
 import CardGrid from './components/Services';
 import BuyMeCoffee from './pages/BuyMeACoffee';
 import PaymentPage from './pages/Payment';
-import ServicesPage from './pages/OurServices';
 import SocialsPage from './pages/Socials';
 import Create from './components/CreateYourPortfolio';
 import MyPortfolio from './components/Myportfolio';
+import Myservices from './components/Myservices';
+
 
 
 const App: React.FC = () => {
@@ -29,13 +30,12 @@ const App: React.FC = () => {
           {/* Define Routes for different sections */}
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><MyPortfolio/><CardGrid/></>} />
+            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><MyPortfolio/><Myservices/><SocialsPage   /><CardGrid/></>} />
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/buy-me-a-coffee" element={<BuyMeCoffee   />} />
-            <Route path="/our-services" element={<ServicesPage   />} />
-            <Route path="/socials" element={<SocialsPage   />} />
+            
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<div>404 Not Found</div>} /> {/* Handle 404 */}

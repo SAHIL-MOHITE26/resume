@@ -32,14 +32,7 @@ const CardGrid: React.FC = () => {
   const navigate = useNavigate();
 
   const cards = [
-    {
-      title: 'Services',
-      image: 'https://www.yeta.in/Content/img/Services.png',
-      onClick: () => {
-        // Add logic for navigation if needed
-        navigate('/our-services');
-      },
-    },
+    
     {
       title: 'Buy me a coffee',
       image: 'https://cdn.hashnode.com/res/hashnode/image/upload/v1627326063491/iWr_Ppp1_.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp',
@@ -59,8 +52,8 @@ const CardGrid: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-9 bg-gray-800 mb-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="container mx-auto px-6 py-9 bg-gray-800 mb-4 mt-[-200px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {cards.map((card, index) => (
           <Card
             key={index}

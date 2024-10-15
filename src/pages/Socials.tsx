@@ -24,8 +24,8 @@ const socials = [
 
 const SocialsPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-500 to-purple-600">
-      <h1 className="text-5xl font-extrabold text-white mb-12 drop-shadow-md">Connect with Me</h1>
+    <div className="h-[500px] flex flex-col justify-center items-center bg-gray-800 mt-[-100px]">
+      <h1 className="text-5xl font-extrabold text-white mb-12 mt-[-200px] drop-shadow-md">Connect with Me</h1>
       <div className="flex space-x-6">
         {socials.map((social, index) => (
           <a

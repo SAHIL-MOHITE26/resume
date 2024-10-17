@@ -4,7 +4,7 @@ const AboutMe: React.FC = () => {
   return (
     <div className="w-full sm:w-[1568px]  ml-[-25px] mx-auto p-4 sm:p-6 mb-[-60px]">
       {/* Container with rounded corners */}
-      <div className="bg-white shadow-lg rounded-t-2xl p-6 mt-[-40px]">
+      <div className="bg-gradient-to-b from-white to-gray-400 shadow-lg rounded-t-2xl p-6 mt-[-40px]">
         {/* Title */}
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 mt-10 font-serif text-left">About Me</h1>
         

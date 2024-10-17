@@ -24,9 +24,9 @@ const services = [
 
 const Myservices: React.FC = () => {
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 bg-gradient-to-b from-white to-gray-400">
       <h1 className="text-5xl mb-6 text-black text-center mt-[-100px]">Services</h1>
-      <div className="ml-20 mt-10 mb-40 grid grid-cols-1 md:grid-cols-3 gap-8 w-[1300px]">
+      <div className="ml-20 mt-10 mb-40 grid grid-cols-1 md:grid-cols-3 gap-8 w-[1300px] ">
         {services.map(service => (
           <div key={service.id} className="border rounded p-[60px] text-center transition-transform duration-300 hover:shadow-lg">
             <div className="flex justify-center mb-4"> {/* Centering the icon */}

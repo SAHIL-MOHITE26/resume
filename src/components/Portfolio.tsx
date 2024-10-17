@@ -25,8 +25,8 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center mt-[70px] ">
-      <div className="relative w-full lg:w-[1500px] mx-auto lg:h-[420px]">
+    <div className="flex justify-center  bg-gradient-to-b from-gray-400 to-white mt-[-20px]">
+      <div className="relative mt-9 w-full lg:w-[1500px] mx-auto lg:h-[420px]">
         <div className="overflow-hidden rounded-lg">
           {images.map((image, index) => (
             <div

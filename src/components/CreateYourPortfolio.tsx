@@ -58,7 +58,8 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white p-4 mt-[-35px] rounded-lg">
+    <div className="flex items-center justify-center bg-gradient-to-b from-white to-gray-400 p-4 mt-[-35px] rounded-lg">
+
       <div className="w-1/2">
         <img 
           src={carouselItems[currentIndex].imageSrc} 

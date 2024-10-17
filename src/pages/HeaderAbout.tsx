@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import cutoutImage from "/src/assets/images/cutout.jpg";
 
 const HeaderAbout: React.FC = () => {
-  // Array of images for the small cards
   const cardImages = [
     "https://www.ied.edu/_default_upload_bucket/1081/image-thumb__1081__scaleByWidth1000/1600x952px_Le%20scuole_Design.jpg",
     "https://www.adorama.com/alc/wp-content/uploads/2021/11/Types-of-Shots-for-Filmmakers-e1641493485327-1024x590.jpg",
@@ -12,7 +12,6 @@ const HeaderAbout: React.FC = () => {
     "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?cs=srgb&dl=pexels-pixabay-46798.jpg&fm=jpg",
   ];
 
-  // Array of hover texts for hobbies
   const hoverTexts = [
     "Designing",
     "Filmmaking",
@@ -22,7 +21,6 @@ const HeaderAbout: React.FC = () => {
     "Football",
   ];
 
-  // Array of objects for certifications (images, names, descriptions, and URLs)
   const certifications = [
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/800px-HackerRank_Icon-1000px.png",
@@ -44,10 +42,37 @@ const HeaderAbout: React.FC = () => {
     },
   ];
 
+  // Refs for the small cards and certifications
+  const smallCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const certRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    // Animate small cards
+    smallCardRefs.current.forEach((card, index) => {
+      if (card) {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, delay: index * 0.2, ease: "power2.out" }
+        );
+      }
+    });
+
+    // Animate certifications
+    certRefs.current.forEach((cert, index) => {
+      if (cert) {
+        gsap.fromTo(
+          cert,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, delay: index * 0.2 + smallCardRefs.current.length * 0.2, ease: "power2.out" }
+        );
+      }
+    });
+  }, []);
+
   return (
     <div className="container mx-auto my-10 relative">
-
-      {/* Big Card */}
+      {/* Big Card Code remains the same */}
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-7xl mx-auto mb-8 relative z-10">
         {/* Description Section */}
         <div className="md:w-2/3 p-6 flex flex-col justify-center">
@@ -82,7 +107,11 @@ const HeaderAbout: React.FC = () => {
       {/* 6 Small Cards Below for Hobbies */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-7xl mx-auto z-10 relative">
         {cardImages.map((image, index) => (
-          <div key={index} className="relative group">
+          <div
+            key={index}
+            ref={(el) => (smallCardRefs.current[index] = el)} // Assign ref
+            className="relative group"
+          >
             <img
               src={image}
               alt={`Card ${index + 1}`}
@@ -101,7 +130,11 @@ const HeaderAbout: React.FC = () => {
       <div className="bg-white rounded-lg shadow-lg p-4 max-w-7xl mx-auto z-10 relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {certifications.map((certification, index) => (
-            <div key={index} className="relative group flex flex-col items-center">
+            <div
+              key={index}
+              ref={(el) => (certRefs.current[index] = el)} // Assign ref
+              className="relative group flex flex-col items-center"
+            >
               <img
                 src={certification.image}
                 alt={`Certification ${index + 1}`}
@@ -114,7 +147,6 @@ const HeaderAbout: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 mb-10 inline-block px-6 py-3 bg-gray-500 text-white font-semibold border border-transparent hover:bg-gray-600 text-center transition-all duration-200"
-          
               >
                 View Certification
               </a>

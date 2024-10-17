@@ -1,9 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  
 
   const images = [
     'https://marketplace.canva.com/EAFYC8yWXio/1/0/1600w/canva-green-minimalist-landscape-quote-desktop-wallpaper-OuM9mjCoT60.jpg',
@@ -18,11 +17,6 @@ const Carousel: React.FC = () => {
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [images.length]);
-
-  // Function to handle the button click
-  const handleSeeMoreClick = () => {
-    navigate('/projects'); // Redirect to the HeaderProjects page
-  };
 
   return (
     <div className="flex justify-center  bg-gradient-to-b from-gray-400 to-white mt-[-20px]">

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
-import Carousel from './components/Carousel';
+import Carousel from './components/1stCarousel';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
-import Portfolio from './components/Portfolio';
+import Portfolio from './components/2ndCarousel';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 import HeaderAbout from './pages/HeaderAbout';

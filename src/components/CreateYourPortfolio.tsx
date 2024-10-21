@@ -34,6 +34,7 @@ const Carousel: React.FC = () => {
   const navigate = useNavigate();
   const textRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null); // Reference for the image
 
   const handleRedirect = () => {
     navigate('/contact');
@@ -59,7 +60,7 @@ const Carousel: React.FC = () => {
           end: 'bottom 20%',
           scrub: true,
         },
-        delay:8,
+        delay: 8,
         duration: 1.5,
         ease: 'power4.out',
       }
@@ -79,9 +80,26 @@ const Carousel: React.FC = () => {
           end: 'bottom 10%',
           scrub: true,
         },
-        delay:9,
+        delay: 9,
         duration: 1.2,
         ease: 'elastic.out(1, 0.75)',
+      }
+    );
+
+    // Animate the image
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0 }, // Start from fully transparent
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true,
+        },
+        duration: 2.5,
+        ease: 'power4.out',
       }
     );
 
@@ -101,25 +119,26 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-b from-white to-gray-400 p-4 mt-[-35px] rounded-lg">
+    <div className="flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 p-5 mt-[-36px] ">
       <div className="w-1/2">
         <img
+          ref={imageRef} // Attach ref to the image
           src={carouselItems[currentIndex].imageSrc}
           alt="Carousel"
-          className="w-full h-[600px] object-cover rounded-lg mb-12 mt-12"
+          className="w-[700px] h-[500px] object-cover mb-12 mt-20 ml-20"
         />
       </div>
-      <div className="w-1/2 p-4 ml-8">
+      <div className="w-[875px] p-4 ml-8">
         <p
           ref={textRef}
-          className="text-5xl text-left font-bold mb-2"
+          className="text-5xl text-left font-bold mb-2 ml-20 text-white"
         >
           {constantDescription}
         </p>
         <div className="relative">
           <button
             ref={buttonRef}
-            className="mt-4 mb-10 inline-block px-6 py-3 bg-transparent font-semibold text-gray-500 border border-gray-500 hover:bg-gray-500 hover:text-white text-center transition-all duration-200"
+            className="mt-6 mb-10 ml-20 inline-block px-6 py-3 bg-transparent font-semibold text-white border border-white hover:bg-gray-500 hover:text-white text-center transition-all duration-200"
             onClick={handleButtonClick}
           >
             {constantButtonText}

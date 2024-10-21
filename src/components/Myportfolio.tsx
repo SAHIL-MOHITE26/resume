@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
 import portfolioImage from '/src/assets/images/portfolio.jpg';
 import seiAdminImage from '/src/assets/images/sei-admin.jpg';
 import gadgetsImage from '/src/assets/images/gadjets.png';
 
+gsap.registerPlugin(ScrollTrigger); // Register the plugin
+
 const MyPortfolio: React.FC = () => {
-  // Sample project data with images and links
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>(Array(4).fill(null)); // Initialize refs for buttons
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>(Array(6).fill(null)); // Initialize refs for cards
+
   const projects = [
     { id: 1, title: 'Personal Portfolio', category: 'Completed', imgSrc: portfolioImage, link: 'https://sahilmohite.netlify.app' },
     { id: 2, title: 'JunkYard', category: 'Completed', imgSrc: 'https://varner.com/globalassets/our_consepts/junkyard/junkyard_20_mob.jpg', link: 'https://junkyard.com' },
@@ -14,68 +21,105 @@ const MyPortfolio: React.FC = () => {
     { id: 6, title: 'Photography Portfolio', category: 'Completed', imgSrc: seiAdminImage, link: 'https://sei-adminpanel.netlify.app/' },
   ];
 
-  // State for the selected filter
   const [selectedFilter, setSelectedFilter] = useState('All');
 
-  // Filter projects based on selected filter
   const filteredProjects = selectedFilter === 'All' 
     ? projects 
     : projects.filter(project => project.category === selectedFilter);
 
-  // Function to get a random height for each card
   const getCardHeight = (id: number) => {
-    const heights = ['h-48', 'h-56', 'h-64', 'h-64']; // Smaller height classes
-    return heights[id % heights.length]; // Rotate through heights based on id
+    const heights = ['h-48', 'h-56', 'h-64', 'h-64'];
+    return heights[id % heights.length];
   };
 
+  useEffect(() => {
+    // Fade in the title on scroll
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: -50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: 'top 80%', // Start animation when the top of the element is 80% down the viewport
+          toggleActions: 'play none none reverse', // Play on enter, reverse on leave
+        },
+      }
+    );
+
+    // Pop out buttons on scroll
+    gsap.fromTo(
+      buttonRefs.current,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2, // Stagger effect for buttons
+        scrollTrigger: {
+          trigger: buttonRefs.current[0], // Use the first button as the trigger
+          start: 'top 80%', // Start animation when the top of the button is 80% down the viewport
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Fade in cards on scroll with stagger
+    gsap.fromTo(
+      cardRefs.current,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2, // Stagger effect for cards
+        scrollTrigger: {
+          trigger: cardRefs.current[0], // Use the first card as the trigger
+          start: 'top 80%', // Start animation when the top of the card is 80% down the viewport
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }, [filteredProjects]); // Re-run effect when filteredProjects change
+
   return (
-    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600  mb-40">
-      <h1 className="text-5xl mb-6 text-white text-center mt-12">My Portfolio</h1>
+    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 mb-40">
+      <h1 ref={titleRef} className="text-5xl mb-6 text-white text-center mt-12">My Portfolio</h1>
 
       <div className="flex justify-center space-x-4 mb-8">
         {/* Filter Buttons */}
-        <button 
-          className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'All' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
-          onClick={() => setSelectedFilter('All')}
-        >
-          All
-        </button>
-        <button 
-          className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Completed' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
-          onClick={() => setSelectedFilter('Completed')}
-        >
-          Completed
-        </button>
-        <button 
-          className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Ongoing' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
-          onClick={() => setSelectedFilter('Ongoing')}
-        >
-          Ongoing
-        </button>
-        <button 
-          className={`py-2 px-4 rounded transition duration-300 ease-in-out 
-              ${selectedFilter === 'Upcoming' ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
-          onClick={() => setSelectedFilter('Upcoming')}
-        >
-          Upcoming
-        </button>
+        {['All', 'Completed', 'Ongoing', 'Upcoming'].map((filter, index) => (
+          <button 
+            key={filter}
+            ref={el => buttonRefs.current[index] = el} // Assign ref to each button
+            className={`py-2 px-4 rounded transition duration-300 ease-in-out 
+                ${selectedFilter === filter ? 'text-lime-400' : 'text-white hover:text-lime-400'}`}
+            onClick={() => setSelectedFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
       </div>
 
       {/* Portfolio Cards Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-        {filteredProjects.map((project) => (
-          <a key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className={`relative bg-gray-700 overflow-hidden text-white flex flex-col ${getCardHeight(project.id)} group`}>
-            {/* Image Section */}
+        {filteredProjects.map((project, index) => (
+          <a 
+            key={project.id} 
+            href={project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            ref={el => cardRefs.current[index] = el} // Assign ref to each card
+            className={`relative bg-gray-700 overflow-hidden text-white flex flex-col ${getCardHeight(project.id)} group`}
+          >
             <div className="flex-1">
               <img 
                 src={project.imgSrc} 
                 alt={project.title} 
-                className="w-full h-full rounded-lg object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110" // Zoom effect
+                className="w-full h-full rounded-lg object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110"
               />
-              {/* Title Overlay */}
               <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h2 className="text-4xl font-bold">{project.title}</h2>
               </div>

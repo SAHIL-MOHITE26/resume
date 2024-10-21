@@ -49,7 +49,7 @@ const Carousel: React.FC = () => {
     // Create animation for the text
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, y: 100 },
+      { opacity: 0, y: 50 }, // Start from below
       {
         opacity: 1,
         y: 0,
@@ -59,6 +59,7 @@ const Carousel: React.FC = () => {
           end: 'bottom 20%',
           scrub: true,
         },
+        delay:8,
         duration: 1.5,
         ease: 'power4.out',
       }
@@ -67,9 +68,10 @@ const Carousel: React.FC = () => {
     // Create animation for the button
     gsap.fromTo(
       buttonRef.current,
-      { opacity: 0, scale: 0.8 },
+      { opacity: 0, y: 50, scale: 0.8 }, // Start from below and smaller
       {
         opacity: 1,
+        y: 0,
         scale: 1,
         scrollTrigger: {
           trigger: buttonRef.current,
@@ -77,6 +79,7 @@ const Carousel: React.FC = () => {
           end: 'bottom 10%',
           scrub: true,
         },
+        delay:9,
         duration: 1.2,
         ease: 'elastic.out(1, 0.75)',
       }

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               <a href="/about" className="hover:text-gray-400">About</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">Skills</a>
+              <a href="#" className="hover:text-gray-400">Skills</a> 
             </li>
             <li>
               <a href="/contact" className="hover:text-gray-400">Contact</a>

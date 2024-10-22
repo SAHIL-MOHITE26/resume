@@ -61,7 +61,7 @@ const BackgroundSection: React.FC = () => {
       {/* Image with fade-in animation */}
       <div 
         ref={imageRef} 
-        className="absolute top-0 right-0 w-[850px] h-full bg-cover mt-20"
+        className="absolute top-0 right-0 w-[850px] h-full bg-cover mt-20 rounded-bl-lg"
         style={{
           backgroundImage: `url(${image1})`,
           backgroundPosition: 'center',

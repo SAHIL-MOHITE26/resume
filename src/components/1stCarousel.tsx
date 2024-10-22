@@ -15,6 +15,7 @@ const BackgroundSection: React.FC = () => {
   const textRef = useRef<HTMLHeadingElement | null>(null);
   const subTextRef = useRef<HTMLHeadingElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const nameRef = useRef<HTMLHeadingElement | null>(null); // Ref for "Sahil Mohite"
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -31,6 +32,13 @@ const BackgroundSection: React.FC = () => {
       { opacity: 0, x: -100 }, // Start from the left
       { opacity: 1, x: 0, duration: 1, ease: 'power2.out' },
       '-=1' // Overlap with the image animation
+    )
+    // Name fade-in
+    .fromTo(
+      nameRef.current,
+      { opacity: 0, y: 20 }, // Start from below
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+      '-=0.5' // Overlap slightly with the main text animation
     )
     // Subtext fade-in
     .fromTo(
@@ -49,9 +57,7 @@ const BackgroundSection: React.FC = () => {
   }, []);
 
   return (
-    <div
-      className="h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 flex flex-col justify-center items-center"
-    >
+    <div className="h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 flex flex-col justify-center items-center">
       {/* Image with fade-in animation */}
       <div 
         ref={imageRef} 
@@ -73,6 +79,7 @@ const BackgroundSection: React.FC = () => {
         </h1>
 
         <h2 
+          ref={nameRef} // Add ref for the name
           className="text-white text-5xl sm:text-6xl font-serif font-bold tracking-wide text-left"
         >
           Sahil Mohite

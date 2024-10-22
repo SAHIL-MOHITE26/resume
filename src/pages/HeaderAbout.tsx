@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import cutoutImage from "/src/assets/images/cutout.jpg";
+import cutoutImage from "/src/assets/images/my photo.png";
 
 const HeaderAbout: React.FC = () => {
   const cardImages = [

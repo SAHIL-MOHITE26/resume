@@ -102,7 +102,7 @@ const Header: React.FC = () => {
 
         {/* Social Media Icons */}
         <div ref={iconsRef} className="flex space-x-2 mt-4 sm:mt-0 items-center">
-          <a href="https://www.linkedin.com/in/sahil-mohite-a39957235/" className="text-white hover:text-blue-600">
+          <a href="https://www.linkedin.com/in/sahil-mohite-a39957235/" className="text-white hover:text-blue-400">
             <FaLinkedin size={20} />
           </a>
           <a href="#" className="text-white hover:text-blue-600">

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useNavigate } from 'react-router-dom';
-import image1 from '../assets/images/cutout.jpg';
+import image1 from '../assets/images/my photo.png';
 
 const BackgroundSection: React.FC = () => {
   const navigate = useNavigate();

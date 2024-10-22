@@ -19,8 +19,8 @@ const Carousel: React.FC = () => {
   }, [images.length]);
 
   return (
-    <div className="flex justify-center  bg-gradient-to-b from-gray-400 to-white mt-[-20px]">
-      <div className="relative mt-9 w-full lg:w-[1500px] mx-auto lg:h-[420px]">
+    <div className="flex justify-center bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 mt-[-20px]">
+      <div className="relative mt-9 w-full lg:w-[1300px] mx-auto lg:h-[420px]">
         <div className="overflow-hidden rounded-lg">
           {images.map((image, index) => (
             <div
@@ -39,7 +39,9 @@ const Carousel: React.FC = () => {
         </div>
         
       </div>
+      
     </div>
+    
   );
 };
 

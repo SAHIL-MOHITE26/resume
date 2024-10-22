@@ -31,7 +31,7 @@ const App: React.FC = () => {
           {/* Define Routes for different sections */}
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><MyPortfolio/><Myservices/><SocialsPage   /><CardGrid/></>} />
+            <Route path="/home" element={<><Carousel /><AboutMe /><Portfolio /><Skills /><Create/><MyPortfolio/><Myservices/><SocialsPage /><CardGrid/></>} />
             <Route path="/about" element={<HeaderAbout />} />
             <Route path="/contact" element={<HeaderContactMe />} />
             <Route path="/projects" element={<Projects />} />

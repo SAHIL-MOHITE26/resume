@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { useNavigate } from "react-router-dom";
-import image1 from '../assets/images/my photo.jpg';
+import { useNavigate } from 'react-router-dom';
+import image1 from '../assets/images/cutout.jpg';
 
 const BackgroundSection: React.FC = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/contact"); 
+    navigate('/contact'); 
   };
 
-  // Refs for the text elements
-  const bgRef = useRef<HTMLDivElement | null>(null);
+  // Refs for the image and text elements
+  const imageRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLHeadingElement | null>(null);
   const subTextRef = useRef<HTMLHeadingElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -19,26 +19,27 @@ const BackgroundSection: React.FC = () => {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Background fade-in
-    tl.to(bgRef.current, {
-      opacity: 1,
-      duration: 1,
-      ease: 'power2.out',
-    })
-    // Main text animation
+    // Image fade-in from the right
+    tl.fromTo(
+      imageRef.current,
+      { opacity: 0, x: 100 }, // Start from the right
+      { opacity: 1, x: 0, duration: 1.5, ease: 'power2.out' }
+    )
+    // Main text fade-in from the left
     .fromTo(
       textRef.current,
-      { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: 1, ease: 'elastic.out(1, 0.8)' }
+      { opacity: 0, x: -100 }, // Start from the left
+      { opacity: 1, x: 0, duration: 1, ease: 'power2.out' },
+      '-=1' // Overlap with the image animation
     )
-    // Subtext animation
+    // Subtext fade-in
     .fromTo(
       subTextRef.current,
       { opacity: 0, y: -10 },
       { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
       '-=0.5' // Overlap slightly with the main text animation
     )
-    // Button animation
+    // Button fade-in
     .fromTo(
       buttonRef.current,
       { opacity: 0, y: 20 },
@@ -49,37 +50,42 @@ const BackgroundSection: React.FC = () => {
 
   return (
     <div
-      ref={bgRef}
-      className="h-screen bg-fixed bg-cover opacity-0" // Start with hidden background
-      style={{
-        backgroundImage: `url(${image1})`, 
-        backgroundPosition: 'center 1%',
-      }}
+      className="h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 flex flex-col justify-center items-center"
     >
-      <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
-        {/* Main Title Animation */}
+      {/* Image with fade-in animation */}
+      <div 
+        ref={imageRef} 
+        className="absolute top-0 right-0 w-[850px] h-full bg-cover mt-20"
+        style={{
+          backgroundImage: `url(${image1})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      ></div>
+
+      {/* Text content with animations */}
+      <div className="relative z-10 flex flex-col items-start pl-8 ml-[-900px]">
         <h1 
           ref={textRef} 
-          className="text-white text-4xl mb-2 tracking-wide text-center"
+          className="text-white text-4xl mb-2 tracking-wide text-left"
         >
           Hello, I'm
         </h1>
 
         <h2 
-          className="text-white text-5xl sm:text-6xl font-serif font-bold tracking-wide text-center"
+          className="text-white text-5xl sm:text-6xl font-serif font-bold tracking-wide text-left"
         >
           Sahil Mohite
         </h2>
 
-        {/* Subtext Animation */}
         <h1 
           ref={subTextRef}
-          className="text-white text-1xl sm:text-1xl font-serif text-center mt-1"
+          className="text-white text-xl font-serif text-left mt-1"
         >
           React JS | Front-End | UI/UX
         </h1>
 
-        {/* Button Animation */}
+        {/* Contact Me Button */}
         <button
           ref={buttonRef}
           className="mt-4 px-6 py-2 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition duration-200"

@@ -146,7 +146,7 @@ const Carousel: React.FC = () => {
 
           {/* Pop-up */}
           {isPopUpOpen && (
-            <div className="absolute left-0 mt-2 bg-white p-4 rounded shadow-lg z-50">
+            <div className="absolute left-0 mt-2 bg-white p-4 rounded shadow-lg z-50 ml-20">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="text-xl font-bold">Choose an Option</h2>
                 <button

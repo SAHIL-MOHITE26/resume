@@ -30,7 +30,7 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 min-h-screen flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg max-w-4xl w-full md:flex">
         
         {/* Image on the left */}

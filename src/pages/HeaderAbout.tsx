@@ -71,7 +71,7 @@ const HeaderAbout: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto my-10 relative">
+    <div className="container mx-auto my-auto relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
       {/* Big Card Code remains the same */}
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-7xl mx-auto mb-8 relative z-10">
         {/* Description Section */}
@@ -126,7 +126,7 @@ const HeaderAbout: React.FC = () => {
       </div>
 
       {/* Certifications Section */}
-      <h2 className="text-3xl font-serif font-bold text-gray-800 my-8 text-center">Certifications</h2>
+      <h2 className="text-3xl font-serif font-bold text-white my-8 text-center">Certifications</h2>
       <div className="bg-white rounded-lg shadow-lg p-4 max-w-7xl mx-auto z-10 relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {certifications.map((certification, index) => (

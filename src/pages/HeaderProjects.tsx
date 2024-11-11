@@ -79,9 +79,9 @@ const Projects: React.FC = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-4xl font-bold text-center mb-8">Projects</h1>
-      
+    <div className="max-w-8xl mx-auto p-20 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
+      <h1 className="text-4xl text-white font-bold text-center mb-8">Projects</h1>
+  
       {/* Filter Buttons */}
       <div className="mb-6 text-center">
         <button

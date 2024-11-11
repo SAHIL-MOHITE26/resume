@@ -108,11 +108,11 @@ const Skills: React.FC = () => {
               Know Me
             </button>
             <button 
-              ref={downloadResumeButtonRef}
-              className="bg-transparent border border-lime-400 text-lime-400 font-semibold py-2 px-4 rounded hover:bg-lime-500 hover:text-black transition duration-300"
-              onClick={() => navigate('/Videography.html')} // Redirects to '/resume' page
-            >
-              Download Resume
+            ref={downloadResumeButtonRef}
+            className="bg-transparent border border-lime-400 text-lime-400 font-semibold py-2 px-4 rounded hover:bg-lime-500 hover:text-black transition duration-300"
+            onClick={() => window.open('https://drive.google.com/file/d/1bb_P2xTYeY7w-F8T-_qW5-zOnOlQmw9g/view?usp=sharing', '_blank')}
+          >
+            Download Resume
             </button>
           </div>
         </section>

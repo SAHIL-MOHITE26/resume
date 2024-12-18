@@ -18,7 +18,7 @@ const AboutMe: React.FC = () => {
             
             {/* Download Resume Button */}
             <a
-              href="https://drive.google.com/file/d/1bb_P2xTYeY7w-F8T-_qW5-zOnOlQmw9g/view?usp=sharing" // Link to your resume
+              href="https://drive.google.com/file/d/1FldZ0ynfMpCjsbmvuoZypuKXjUJ4x0Kr/view?usp=sharing" // Link to your resume
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 ml-[635px] mb-40 inline-block px-6 py-2 bg-gray-500 text-white font-semibold border border-transparent rounded hover:bg-gray-600 text-center transition-all duration-200"

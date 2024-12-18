@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaGitAlt } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import StatsSection from './StatsSection';
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -87,7 +88,7 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 mb-9">
+    <div className="w-full p-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600  ">
       <div className="flex flex-col md:flex-row md:space-x-8 h-full">
         {/* Skills List Section */}
         <section className="flex-1 text-white mb-8 md:mb-0 text-section">
@@ -144,8 +145,11 @@ const Skills: React.FC = () => {
             ))}
           </div>
         </section>
+        
       </div>
+      <StatsSection/>
     </div>
+    
   );
 };
 

@@ -23,7 +23,7 @@ const Skills: React.FC = () => {
   const downloadResumeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // Fade-in effect for the text section
+    // Fade-in effect for the text section 
     gsap.fromTo(
       ".text-section", 
       { opacity: 0, x: -100 }, 
